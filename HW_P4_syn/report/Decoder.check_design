@@ -1,0 +1,19 @@
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP5-5
+Date:        Wed Nov 27 13:46:14 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      5
+    Shorted outputs (LINT-31)                                       5
+--------------------------------------------------------------------------------
+
+Warning: In design 'instruction_decoder', output port 'RegisterB[4]' is connected directly to output port 'HDU_B[4]'. (LINT-31)
+Warning: In design 'instruction_decoder', output port 'RegisterB[3]' is connected directly to output port 'HDU_B[3]'. (LINT-31)
+Warning: In design 'instruction_decoder', output port 'RegisterB[2]' is connected directly to output port 'HDU_B[2]'. (LINT-31)
+Warning: In design 'instruction_decoder', output port 'RegisterB[1]' is connected directly to output port 'HDU_B[1]'. (LINT-31)
+Warning: In design 'instruction_decoder', output port 'RegisterB[0]' is connected directly to output port 'HDU_B[0]'. (LINT-31)
+1

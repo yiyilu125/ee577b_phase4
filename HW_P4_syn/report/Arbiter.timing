@@ -1,0 +1,93 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : round_robin_arbiter
+Version: K-2015.06-SP5-5
+Date   : Tue Nov 26 16:37:44 2024
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: req3[2] (input port)
+  Endpoint: state_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  req3[2] (in)                             0.00       0.00 r
+  U96/Y (NOR3X1)                           0.03       0.03 f
+  U95/Y (NAND3X1)                          0.03       0.06 r
+  U155/Y (BUFX2)                           0.04       0.10 r
+  U104/Y (AND2X1)                          0.06       0.16 r
+  U153/Y (AND2X1)                          0.04       0.20 r
+  U98/Y (OR2X1)                            0.04       0.24 r
+  U150/Y (INVX1)                           0.02       0.26 f
+  U66/Y (NAND3X1)                          0.03       0.29 r
+  U149/Y (BUFX2)                           0.04       0.33 r
+  U64/Y (NAND3X1)                          0.02       0.35 f
+  U131/Y (BUFX2)                           0.03       0.38 f
+  U120/Y (AND2X1)                          0.04       0.42 f
+  U121/Y (INVX1)                           0.00       0.43 r
+  U62/Y (OAI21X1)                          0.03       0.46 f
+  U182/Y (INVX1)                           0.01       0.47 r
+  U61/Y (AOI21X1)                          0.01       0.48 f
+  U113/Y (BUFX2)                           0.03       0.51 f
+  state_reg[1]/D (DFFPOSX1)                0.00       0.51 f
+  data arrival time                                   0.51
+
+  max_delay                                5.00       5.00
+  library setup time                      -0.06       4.94
+  data required time                                  4.94
+  -----------------------------------------------------------
+  data required time                                  4.94
+  data arrival time                                  -0.51
+  -----------------------------------------------------------
+  slack (MET)                                         4.43
+
+
+  Startpoint: state_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: grant[0] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  state_reg[2]/CLK (DFFPOSX1)              0.00       0.00 r
+  state_reg[2]/Q (DFFPOSX1)                0.11       0.11 f
+  U144/Y (OR2X1)                           0.06       0.16 f
+  U107/Y (OR2X1)                           0.04       0.20 f
+  U106/Y (OR2X1)                           0.06       0.26 f
+  U170/Y (INVX1)                           0.03       0.29 r
+  U142/Y (AND2X1)                          0.04       0.33 r
+  U143/Y (INVX1)                           0.02       0.35 f
+  U51/Y (NAND3X1)                          0.03       0.38 r
+  U132/Y (BUFX2)                           0.03       0.42 r
+  U124/Y (AND2X1)                          0.04       0.46 r
+  U125/Y (INVX1)                           0.02       0.48 f
+  U49/Y (OAI21X1)                          0.06       0.54 r
+  U46/Y (AOI22X1)                          0.05       0.59 f
+  U133/Y (BUFX2)                           0.04       0.62 f
+  U44/Y (NAND2X1)                          0.02       0.64 r
+  grant[0] (out)                           0.00       0.64 r
+  data arrival time                                   0.64
+
+  max_delay                                5.00       5.00
+  output external delay                    0.00       5.00
+  data required time                                  5.00
+  -----------------------------------------------------------
+  data required time                                  5.00
+  data arrival time                                  -0.64
+  -----------------------------------------------------------
+  slack (MET)                                         4.36
+
+
+1

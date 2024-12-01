@@ -1,0 +1,58 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : routing_algo
+Version: K-2015.06-SP5-5
+Date   : Wed Nov 27 14:39:57 2024
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: dataIn[40] (input port)
+  Endpoint: dataOutD[0]
+            (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  dataIn[40] (in)                          0.00       0.00 f
+  U755/Y (AND2X1)                          0.05       0.05 f
+  add_78/U1_1/YC (FAX1)                    0.08       0.13 f
+  add_78/U1_2/YC (FAX1)                    0.08       0.22 f
+  add_78/U1_3/YC (FAX1)                    0.08       0.30 f
+  U753/Y (AND2X1)                          0.04       0.34 f
+  U751/Y (AND2X1)                          0.04       0.39 f
+  U749/Y (AND2X1)                          0.04       0.43 f
+  U748/Y (XOR2X1)                          0.03       0.46 f
+  U425/Y (OR2X1)                           0.04       0.50 f
+  U364/Y (NOR3X1)                          0.05       0.55 r
+  U389/Y (AND2X1)                          0.05       0.61 r
+  U354/Y (AOI22X1)                         0.04       0.64 f
+  U386/Y (BUFX2)                           0.04       0.68 f
+  U421/Y (INVX1)                           0.00       0.68 r
+  U384/Y (AND2X1)                          0.04       0.72 r
+  U412/Y (AND2X1)                          0.23       0.95 r
+  U397/Y (INVX1)                           0.10       1.05 f
+  U394/Y (INVX1)                           0.09       1.15 r
+  U536/Y (AND2X1)                          0.02       1.17 r
+  dataOutD[0] (out)                        0.00       1.17 r
+  data arrival time                                   1.17
+
+  max_delay                                5.00       5.00
+  output external delay                    0.00       5.00
+  data required time                                  5.00
+  -----------------------------------------------------------
+  data required time                                  5.00
+  data arrival time                                  -1.17
+  -----------------------------------------------------------
+  slack (MET)                                         3.83
+
+
+1
