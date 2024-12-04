@@ -13,8 +13,7 @@ set design_name $env(DESIGN_NAME);
 
 ## For NCSUFreePDK45nm library
 set search_path [ list . \
-                  /home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files \
-/usr/local/synopsys/Design_Compiler/K-2015.06-SP5-5/dw/sim_ver ]
+                  /home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files]
 set target_library { gscl45nm.db }
 set synthetic_library [list dw_foundation.sldb standard.sldb ]
 set link_library [list * gscl45nm.db dw_foundation.sldb standard.sldb]
@@ -24,31 +23,88 @@ set link_library [list * gscl45nm.db dw_foundation.sldb standard.sldb]
 # copy your verilog file into ./src/ before synthesis.
 
 
-read_verilog ./src/${design_name}.v ;
-read_verilog ./src/DW_sqrt.v ;
-read_verilog ./src/DW_div.v ;
-read_verilog ./src/DW_square.v ;
+#read_verilog ./src/ALU.v
+#read_verilog ./src/pc.v
+#read_verilog ./src/hdu.v
+#read_verilog ./src/nic.v
+#read_verilog ./src/branch.v
+#read_verilog ./src/mux_2.v
+#read_verilog ./src/instruction_decoder.v
+#read_verilog ./include/dmem.v
+#read_verilog ./include/imem.v
 
 
 
-analyze -format verilog /usr/local/synopsys/Design_Compiler/K-2015.06-SP5-5/dw/sim_ver/DW_sqrt.v
-elaborate DW_sqrt
-
-analyze -format verilog /usr/local/synopsys/Design_Compiler/K-2015.06-SP5-5/dw/sim_ver/DW_div.v
-elaborate DW_div
-
-analyze -format verilog /usr/local/synopsys/Design_Compiler/K-2015.06-SP5-5/dw/sim_ver/DW_square.v
-elaborate DW_square
+read_verilog ./src/pipeline.v
 
 
-analyze -format verilog ./src/DW_sqrt.v
-elaborate DW_sqrt
 
-analyze -format verilog ./src/DW_div.v
-elaborate DW_div
 
-analyze -format verilog ./src/DW_square.v
-elaborate DW_square
+# analyze -format verilog ./include/sim_ver/DW_sqrt.v
+# elaborate DW_sqrt
+
+# analyze -format verilog ./include/sim_ver/DW_div.v
+# elaborate DW_div
+
+# analyze -format verilog ./include/sim_ver/DW_square.v
+# elaborate DW_square
+
+#analyze -format verilog ./include/dmem.v
+#elaborate dmem
+
+#analyze -format verilog ./include/imem.v
+#elaborate imem
+
+
+
+
+
+#analyze -format verilog ./src/ALU.v
+#elaborate ALU
+
+# analyze -format verilog ./src/pc.v
+# elaborate pc
+
+# analyze -format verilog ./src/hdu.v
+# elaborate hdu
+
+# analyze -format verilog ./src/nic.v
+# elaborate nic
+
+# analyze -format verilog ./src/branch.v
+# elaborate branch
+
+# analyze -format verilog ./src/mux_2.v
+# elaborate mux_2
+
+# analyze -format verilog ./src/instruction_decoder.v
+# elaborate instruction_decoder
+
+# analyze -format verilog ./src/pipeline.v
+# elaborate pipeline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Setting $design_name as current working design.
 # Use this command before setting any constraints.

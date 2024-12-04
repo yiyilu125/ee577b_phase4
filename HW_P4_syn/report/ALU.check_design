@@ -2,14 +2,57 @@
 ****************************************
 check_design summary:
 Version:     K-2015.06-SP5-5
-Date:        Sat Nov 30 16:22:35 2024
+Date:        Mon Dec  2 22:36:06 2024
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Designs                                                             1
-    Black box (LINT-55)                                             1
+Cells                                                              26
+    Cells do not drive (LINT-1)                                    26
+
+Nets                                                               15
+    Unloaded nets (LINT-2)                                         15
 --------------------------------------------------------------------------------
 
-Information: Design 'DW_square' does not contain any cells or nets. (LINT-55)
+Warning: In design 'ALU', cell 'C3830' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3831' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3832' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3833' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3839' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3840' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3841' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3842' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3848' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3849' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3850' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3856' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3857' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3858' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3864' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3865' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3866' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3867' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3873' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3874' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3875' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3876' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3882' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3883' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3884' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'C3885' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', net 'div_by_0_64bit' driven by pin 'div_64bit/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_32bit_1' driven by pin 'div_32bit_1/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_32bit_0' driven by pin 'div_32bit_0/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_16bit_3' driven by pin 'div_16bit_3/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_16bit_2' driven by pin 'div_16bit_2/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_16bit_1' driven by pin 'div_16bit_1/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_16bit_0' driven by pin 'div_16bit_0/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_7' driven by pin 'div_8bit_7/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_6' driven by pin 'div_8bit_6/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_5' driven by pin 'div_8bit_5/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_4' driven by pin 'div_8bit_4/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_3' driven by pin 'div_8bit_3/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_2' driven by pin 'div_8bit_2/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_1' driven by pin 'div_8bit_1/divide_by_0' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'div_by_0_8bit_0' driven by pin 'div_8bit_0/divide_by_0' has no loads. (LINT-2)
 1

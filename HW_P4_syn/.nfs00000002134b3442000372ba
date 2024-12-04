@@ -1,0 +1,1092 @@
+######################################################################
+#
+# EE-577b 2020 FALL
+# : DesignCompiler synthesis script
+#   modified by Linyi Hong
+#
+# use this script as a template for synthesizing combinational logic
+#
+######################################################################
+# Setting variable for design_name. (top module name)
+set design_name $env(DESIGN_NAME);
+pipeline
+## For NCSUFreePDK45nm library
+set search_path [ list .                   /home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files]
+. /home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files
+set target_library { gscl45nm.db }
+ gscl45nm.db 
+set synthetic_library [list dw_foundation.sldb standard.sldb ]
+dw_foundation.sldb standard.sldb
+set link_library [list * gscl45nm.db dw_foundation.sldb standard.sldb]
+* gscl45nm.db dw_foundation.sldb standard.sldb
+# Reading source verilog file.
+# copy your verilog file into ./src/ before synthesis.
+read_verilog ./src/ALU.v
+Loading db file '/home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files/gscl45nm.db'
+Loading db file '/usr/local/synopsys/Design_Compiler/default/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/local/synopsys/Design_Compiler/default/libraries/syn/standard.sldb'
+Loading db file '/usr/local/synopsys/Design_Compiler/default/libraries/syn/gtech.db'
+  Loading link library 'gscl45nm'
+  Loading link library 'gtech'
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v'
+Detecting input file type automatically (-rtl or -netlist).
+Opening include file ./include/sim_ver/DW_div.v
+Opening include file ./include/sim_ver/DW_sqrt.v
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v
+Opening include file ./include/sim_ver/DW_div.v
+Warning:  ./include/sim_ver/DW_div.v:109: Function 'DWF_div_uns' with non-empty body is mapped to 'DIV_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:146: Function 'DWF_div_tc' with non-empty body is mapped to 'DIV_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:194: Function 'DWF_rem_uns' with non-empty body is mapped to 'REM_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:230: Function 'DWF_rem_tc' with non-empty body is mapped to 'REM_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:276: Function 'DWF_mod_uns' with non-empty body is mapped to 'MOD_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:312: Function 'DWF_mod_tc' with non-empty body is mapped to 'MOD_TC_OP'; body will be ignored. (VER-136)
+Opening include file ./include/sim_ver/DW_sqrt.v
+Warning:  ./include/sim_ver/DW_div.v:415: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./include/sim_ver/DW_sqrt.v:79: Function 'DWF_sqrt_uns' with non-empty body is mapped to 'SQRT_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_sqrt.v:111: Function 'DWF_sqrt_tc' with non-empty body is mapped to 'SQRT_TC_OP'; body will be ignored. (VER-136)
+Opening include file ./include/sim_ver/DW_square.v
+Warning:  ./include/sim_ver/DW_sqrt.v:172: The statements in initial blocks are ignored. (VER-281)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:637: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:638: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:639: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:640: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:641: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:642: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:643: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:644: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:648: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:649: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:650: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:651: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:655: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:656: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:660: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:284: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:322: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:352: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:386: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:420: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:454: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:488: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:567: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:600: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:634: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:668: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:703: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:744: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v:834: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 278 in file
+        '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/ALU.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           284            |    auto/auto     |
+|           322            |    auto/auto     |
+|           352            |    auto/auto     |
+|           386            |    auto/auto     |
+|           420            |    auto/auto     |
+|           454            |    auto/auto     |
+|           488            |    auto/auto     |
+|           522            |    auto/auto     |
+|           545            |    auto/auto     |
+|           567            |    auto/auto     |
+|           600            |    auto/auto     |
+|           634            |    auto/auto     |
+|           668            |    auto/auto     |
+|           703            |    auto/auto     |
+|           744            |    auto/auto     |
+|           787            |    auto/auto     |
+|           810            |    auto/auto     |
+|           834            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/DW_div.db:DW_div'
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_div-verilog.pvl not found, or does not contain a usable description of DW_div. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_div-verilog.pvl not found, or does not contain a usable description of DW_div. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_div-verilog.pvl not found, or does not contain a usable description of DW_div. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_div-verilog.pvl not found, or does not contain a usable description of DW_div. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_square-verilog.pvl not found, or does not contain a usable description of DW_square. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_square-verilog.pvl not found, or does not contain a usable description of DW_square. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_square-verilog.pvl not found, or does not contain a usable description of DW_square. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_sqrt-verilog.pvl not found, or does not contain a usable description of DW_sqrt. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_sqrt-verilog.pvl not found, or does not contain a usable description of DW_sqrt. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_sqrt-verilog.pvl not found, or does not contain a usable description of DW_sqrt. (ELAB-320)
+Warning:  File /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/DW_sqrt-verilog.pvl not found, or does not contain a usable description of DW_sqrt. (ELAB-320)
+Loaded 4 designs.
+Current design is 'DW_div'.
+DW_div DW_sqrt DW_square ALU
+read_verilog ./src/pc.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pc.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pc.v
+
+Inferred memory devices in process
+        in routine pc line 9 in file
+                '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pc.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   ins_address_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pc.db:pc'
+Loaded 1 design.
+Current design is 'pc'.
+pc
+read_verilog ./src/hdu.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/hdu.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/hdu.v
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/hdu.v:12: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/hdu.v:13: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/hdu.db:hdu'
+Loaded 1 design.
+Current design is 'hdu'.
+hdu
+read_verilog ./src/nic.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/nic.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/nic.v
+
+Inferred memory devices in process
+        in routine nic line 34 in file
+                '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/nic.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| output_channel_buffer_reg | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| input_channel_buffer_reg  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|        net_ri_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     output_status_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     input_status_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         d_out_reg         | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+=====================================================================================
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/nic.db:nic'
+Loaded 1 design.
+Current design is 'nic'.
+nic
+read_verilog ./src/branch.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/branch.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/branch.v
+
+Statistics for case statements in always block at line 12 in file
+        '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/branch.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            24            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/branch.db:branch'
+Loaded 1 design.
+Current design is 'branch'.
+branch
+read_verilog ./src/mux_2.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/mux_2.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/mux_2.v
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/mux_2.db:mux_2'
+Loaded 1 design.
+Current design is 'mux_2'.
+mux_2
+read_verilog ./src/instruction_decoder.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/instruction_decoder.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/instruction_decoder.v
+
+Statistics for case statements in always block at line 29 in file
+        '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/instruction_decoder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            30            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine instruction_decoder line 29 in file
+                '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/instruction_decoder.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    adder_nic_reg    | Latch |   2   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/instruction_decoder.db:instruction_decoder'
+Loaded 1 design.
+Current design is 'instruction_decoder'.
+instruction_decoder
+#read_verilog ./include/dmem.v
+#read_verilog ./include/imem.v
+read_verilog ./src/pipeline.v
+Loading verilog file '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pipeline.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pipeline.v
+
+Inferred memory devices in process
+        in routine pipeline line 89 in file
+                '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pipeline.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| s1_reg_instruction_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+        in routine pipeline line 201 in file
+                '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pipeline.v'.
+=======================================================================================
+|        Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=======================================================================================
+|    s2_reg_rd_address_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    s2_reg_writen_en_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      s2_reg_data1_reg       | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|      s2_reg_data2_reg       | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|        s2_opcode_reg        | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|          s2_ww_reg          | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       s2_reg_ppp_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+| s2_reg_dmem_load_signal_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| s2_reg_nic_load_signal_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=======================================================================================
+
+Inferred memory devices in process
+        in routine pipeline line 239 in file
+                '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pipeline.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|  s3_reg_write_en_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| s3_reg_rd_address_reg | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   s3_reg_result_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|    s3_reg_ppp_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully.
+Current design is now '/home/viterbi/01/heyuhang/ee577b/HW_P4_syn/src/pipeline.db:pipeline'
+Loaded 1 design.
+Current design is 'pipeline'.
+pipeline
+analyze -format verilog ./include/sim_ver/DW_sqrt.v
+Running PRESTO HDLC
+Compiling source file ./include/sim_ver/DW_sqrt.v
+Warning:  ./include/sim_ver/DW_sqrt.v:79: Function 'DWF_sqrt_uns' with non-empty body is mapped to 'SQRT_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_sqrt.v:111: Function 'DWF_sqrt_tc' with non-empty body is mapped to 'SQRT_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_sqrt.v:172: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+1
+elaborate DW_sqrt
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'DW_sqrt'.
+1
+analyze -format verilog ./include/sim_ver/DW_div.v
+Running PRESTO HDLC
+Compiling source file ./include/sim_ver/DW_div.v
+Warning:  ./include/sim_ver/DW_div.v:109: Function 'DWF_div_uns' with non-empty body is mapped to 'DIV_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:146: Function 'DWF_div_tc' with non-empty body is mapped to 'DIV_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:194: Function 'DWF_rem_uns' with non-empty body is mapped to 'REM_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:230: Function 'DWF_rem_tc' with non-empty body is mapped to 'REM_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:276: Function 'DWF_mod_uns' with non-empty body is mapped to 'MOD_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:312: Function 'DWF_mod_tc' with non-empty body is mapped to 'MOD_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:415: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+1
+elaborate DW_div
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'DW_div'.
+1
+analyze -format verilog ./include/sim_ver/DW_square.v
+Running PRESTO HDLC
+Compiling source file ./include/sim_ver/DW_square.v
+Presto compilation completed successfully.
+1
+elaborate DW_square
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'DW_square'.
+1
+#analyze -format verilog ./include/dmem.v
+#elaborate dmem
+#analyze -format verilog ./include/imem.v
+#elaborate imem
+analyze -format verilog ./src/ALU.v
+Running PRESTO HDLC
+Compiling source file ./src/ALU.v
+Opening include file ./include/sim_ver/DW_div.v
+Warning:  ./include/sim_ver/DW_div.v:109: Function 'DWF_div_uns' with non-empty body is mapped to 'DIV_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:146: Function 'DWF_div_tc' with non-empty body is mapped to 'DIV_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:194: Function 'DWF_rem_uns' with non-empty body is mapped to 'REM_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:230: Function 'DWF_rem_tc' with non-empty body is mapped to 'REM_TC_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:276: Function 'DWF_mod_uns' with non-empty body is mapped to 'MOD_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_div.v:312: Function 'DWF_mod_tc' with non-empty body is mapped to 'MOD_TC_OP'; body will be ignored. (VER-136)
+Opening include file ./include/sim_ver/DW_sqrt.v
+Warning:  ./include/sim_ver/DW_div.v:415: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./include/sim_ver/DW_sqrt.v:79: Function 'DWF_sqrt_uns' with non-empty body is mapped to 'SQRT_UNS_OP'; body will be ignored. (VER-136)
+Warning:  ./include/sim_ver/DW_sqrt.v:111: Function 'DWF_sqrt_tc' with non-empty body is mapped to 'SQRT_TC_OP'; body will be ignored. (VER-136)
+Opening include file ./include/sim_ver/DW_square.v
+Warning:  ./include/sim_ver/DW_sqrt.v:172: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+1
+elaborate ALU
+Running PRESTO HDLC
+Warning:  ./src/ALU.v:637: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:638: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:639: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:640: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:641: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:642: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:643: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:644: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:648: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:649: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:650: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:651: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:655: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:656: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:660: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/ALU.v:284: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:322: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:352: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:386: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:420: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:454: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:488: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:567: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:600: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:634: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:668: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:703: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:744: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ./src/ALU.v:834: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 278 in file
+        './src/ALU.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           284            |    auto/auto     |
+|           322            |    auto/auto     |
+|           352            |    auto/auto     |
+|           386            |    auto/auto     |
+|           420            |    auto/auto     |
+|           454            |    auto/auto     |
+|           488            |    auto/auto     |
+|           522            |    auto/auto     |
+|           545            |    auto/auto     |
+|           567            |    auto/auto     |
+|           600            |    auto/auto     |
+|           634            |    auto/auto     |
+|           668            |    auto/auto     |
+|           703            |    auto/auto     |
+|           744            |    auto/auto     |
+|           787            |    auto/auto     |
+|           810            |    auto/auto     |
+|           834            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'ALU'.
+1
+analyze -format verilog ./src/pc.v
+Running PRESTO HDLC
+Compiling source file ./src/pc.v
+Presto compilation completed successfully.
+1
+elaborate pc
+Running PRESTO HDLC
+
+Inferred memory devices in process
+        in routine pc line 9 in file
+                './src/pc.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   ins_address_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'pc'.
+1
+analyze -format verilog ./src/hdu.v
+Running PRESTO HDLC
+Compiling source file ./src/hdu.v
+Presto compilation completed successfully.
+1
+elaborate hdu
+Running PRESTO HDLC
+Warning:  ./src/hdu.v:12: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./src/hdu.v:13: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'hdu'.
+1
+analyze -format verilog ./src/nic.v
+Running PRESTO HDLC
+Compiling source file ./src/nic.v
+Presto compilation completed successfully.
+1
+elaborate nic
+Running PRESTO HDLC
+
+Inferred memory devices in process
+        in routine nic line 34 in file
+                './src/nic.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| output_channel_buffer_reg | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| input_channel_buffer_reg  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|        net_ri_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     output_status_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     input_status_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         d_out_reg         | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+=====================================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'nic'.
+1
+analyze -format verilog ./src/branch.v
+Running PRESTO HDLC
+Compiling source file ./src/branch.v
+Presto compilation completed successfully.
+1
+elaborate branch
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 12 in file
+        './src/branch.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            24            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'branch'.
+1
+analyze -format verilog ./src/mux_2.v
+Running PRESTO HDLC
+Compiling source file ./src/mux_2.v
+Presto compilation completed successfully.
+1
+elaborate mux_2
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mux_2'.
+1
+analyze -format verilog ./src/instruction_decoder.v
+Running PRESTO HDLC
+Compiling source file ./src/instruction_decoder.v
+Presto compilation completed successfully.
+1
+elaborate instruction_decoder
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 29 in file
+        './src/instruction_decoder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            30            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine instruction_decoder line 29 in file
+                './src/instruction_decoder.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    adder_nic_reg    | Latch |   2   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'instruction_decoder'.
+1
+analyze -format verilog ./src/pipeline.v
+Running PRESTO HDLC
+Compiling source file ./src/pipeline.v
+Presto compilation completed successfully.
+1
+elaborate pipeline
+Running PRESTO HDLC
+
+Inferred memory devices in process
+        in routine pipeline line 89 in file
+                './src/pipeline.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| s1_reg_instruction_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+        in routine pipeline line 201 in file
+                './src/pipeline.v'.
+=======================================================================================
+|        Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=======================================================================================
+|    s2_reg_rd_address_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    s2_reg_writen_en_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      s2_reg_data1_reg       | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|      s2_reg_data2_reg       | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|        s2_opcode_reg        | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|          s2_ww_reg          | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       s2_reg_ppp_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+| s2_reg_dmem_load_signal_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| s2_reg_nic_load_signal_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=======================================================================================
+
+Inferred memory devices in process
+        in routine pipeline line 239 in file
+                './src/pipeline.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|  s3_reg_write_en_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| s3_reg_rd_address_reg | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   s3_reg_result_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|    s3_reg_ppp_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'pipeline'.
+Information: Building the design 'program_counter'. (HDL-193)
+Warning: Cannot find the design 'program_counter' in the library 'WORK'. (LBR-1)
+Information: Building the design 'register_file'. (HDL-193)
+Warning: Cannot find the design 'register_file' in the library 'WORK'. (LBR-1)
+Warning: Design 'ALU.db:ALU' comes before design 'ALU.db:ALU' in the link_library; 'ALU.db:ALU' will be ignored. (UIO-92)
+Information: Design 'ALU' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'hdu.db:hdu' comes before design 'hdu.db:hdu' in the link_library; 'hdu.db:hdu' will be ignored. (UIO-92)
+Information: Design 'hdu' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'branch.db:branch' comes before design 'branch.db:branch' in the link_library; 'branch.db:branch' will be ignored. (UIO-92)
+Information: Design 'branch' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'mux_2.db:mux_2' comes before design 'mux_2.db:mux_2' in the link_library; 'mux_2.db:mux_2' will be ignored. (UIO-92)
+Information: Design 'mux_2' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Information: Design 'mux_2' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Information: Design 'mux_2' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Information: Design 'mux_2' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Information: Design 'mux_2' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'instruction_decoder.db:instruction_decoder' comes before design 'instruction_decoder.db:instruction_decoder' in the link_library; 'instruction_decoder.db:instruction_decoder' will be ignored. (UIO-92)
+Information: Design 'instruction_decoder' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'pipeline' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+# Setting $design_name as current working design.
+# Use this command before setting any constraints.
+current_design $design_name ;
+Error: 'pipeline' doesn't specify a unique design
+        Please use complete specification: full_file_name:design_name (UID-13)
+Current design is 'pipeline'.
+{pipeline}
+# If you have multiple instances of the same module,
+# use this so that DesignCompiler optimizes each instance separately.
+uniquify ;
+Warning: Design 'pipeline' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Uniquified 5 instances of design 'mux_2'. (OPT-1056)
+Warning: Design 'ALU.db:ALU' comes before design 'ALU.db:ALU' in the link_library; 'ALU.db:ALU' will be ignored. (UIO-92)
+Information: Design 'ALU' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'hdu.db:hdu' comes before design 'hdu.db:hdu' in the link_library; 'hdu.db:hdu' will be ignored. (UIO-92)
+Information: Design 'hdu' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'branch.db:branch' comes before design 'branch.db:branch' in the link_library; 'branch.db:branch' will be ignored. (UIO-92)
+Information: Design 'branch' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'instruction_decoder.db:instruction_decoder' comes before design 'instruction_decoder.db:instruction_decoder' in the link_library; 'instruction_decoder.db:instruction_decoder' will be ignored. (UIO-92)
+Information: Design 'instruction_decoder' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+1
+# Linking your design into the cells in standard cell libraries.
+# This command checks whether your design can be compiled
+link ;
+
+  Linking design 'pipeline'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (27 designs)              /home/viterbi/01/heyuhang/ee577b/HW_P4_syn/pipeline.db, etc
+  gscl45nm (library)          /home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files/gscl45nm.db
+  dw_foundation.sldb (library) /usr/local/synopsys/Design_Compiler/default/libraries/syn/dw_foundation.sldb
+
+Information: Building the design 'program_counter'. (HDL-193)
+Warning: Cannot find the design 'program_counter' in the library 'WORK'. (LBR-1)
+Information: Building the design 'register_file'. (HDL-193)
+Warning: Cannot find the design 'register_file' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'program_counter' in 'pipeline'. (LINK-5)
+Warning: Unable to resolve reference 'register_file' in 'pipeline'. (LINK-5)
+Warning: Design 'ALU.db:ALU' comes before design 'ALU.db:ALU' in the link_library; 'ALU.db:ALU' will be ignored. (UIO-92)
+Information: Design 'ALU' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'hdu.db:hdu' comes before design 'hdu.db:hdu' in the link_library; 'hdu.db:hdu' will be ignored. (UIO-92)
+Information: Design 'hdu' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'branch.db:branch' comes before design 'branch.db:branch' in the link_library; 'branch.db:branch' will be ignored. (UIO-92)
+Information: Design 'branch' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'instruction_decoder.db:instruction_decoder' comes before design 'instruction_decoder.db:instruction_decoder' in the link_library; 'instruction_decoder.db:instruction_decoder' will be ignored. (UIO-92)
+Information: Design 'instruction_decoder' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+0
+# Create a clock with period of 5.
+create_clock -name clk -period 5.0 -waveform [list 0 2.5] [get_ports clk]
+Warning: Design 'pipeline' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+# Setting timing constraints for combinational logic.
+# Specifying maximum delay from inputs to outputs
+set_max_delay 5.0 -to [all_outputs];
+Warning: Design 'pipeline' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_max_delay 5.0 -from [all_inputs];
+Warning: Design 'pipeline' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+# "check_design" checks the internal representation of the
+# current design for consistency and issues error and
+# warning messages as appropriate.
+check_design > report/$design_name.check_design ;
+# Perforing synthesis and optimization on the current_design.
+compile ;
+Warning: Design 'pipeline' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.5.2
+                                                               |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.5.2
+                                                               |     *     |
+============================================================================
+
+
+Information: There are 245 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mux_2_0'
+  Processing 'ALU'
+  Processing 'branch'
+  Processing 'hdu'
+Information: Added key list 'DesignWare' to design 'hdu'. (DDB-72)
+  Processing 'instruction_decoder'
+  Processing 'pipeline'
+Information: Building the design 'program_counter'. (HDL-193)
+Warning: Cannot find the design 'program_counter' in the library 'WORK'. (LBR-1)
+Information: Building the design 'register_file'. (HDL-193)
+Warning: Cannot find the design 'register_file' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'program_counter' in 'pipeline'. (LINK-5)
+Warning: Unable to resolve reference 'register_file' in 'pipeline'. (LINK-5)
+Warning: Design 'ALU.db:ALU' comes before design 'ALU.db:ALU' in the link_library; 'ALU.db:ALU' will be ignored. (UIO-92)
+Information: Design 'ALU' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'hdu.db:hdu' comes before design 'hdu.db:hdu' in the link_library; 'hdu.db:hdu' will be ignored. (UIO-92)
+Information: Design 'hdu' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'branch.db:branch' comes before design 'branch.db:branch' in the link_library; 'branch.db:branch' will be ignored. (UIO-92)
+Information: Design 'branch' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+Warning: Design 'instruction_decoder.db:instruction_decoder' comes before design 'instruction_decoder.db:instruction_decoder' in the link_library; 'instruction_decoder.db:instruction_decoder' will be ignored. (UIO-92)
+Information: Design 'instruction_decoder' is referenced in design 'pipeline.db:pipeline'. (UIO-93)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'ALU_DW_sqrt_0'
+  Processing 'ALU_DW_sqrt_1'
+  Processing 'ALU_DW_sqrt_2'
+  Processing 'ALU_DW_sqrt_3'
+  Processing 'ALU_DW_sqrt_4'
+  Processing 'ALU_DW_sqrt_5'
+  Processing 'ALU_DW_sqrt_6'
+  Processing 'ALU_DW_sqrt_7'
+  Processing 'ALU_DW_sqrt_8'
+  Processing 'ALU_DW_sqrt_9'
+  Processing 'ALU_DW_sqrt_10'
+  Processing 'ALU_DW_sqrt_11'
+  Processing 'ALU_DW_sqrt_12'
+  Processing 'ALU_DW_sqrt_13'
+  Processing 'ALU_DW_sqrt_14'
+  Mapping 'ALU_DW_square_0'
+  Mapping 'ALU_DW_square_1'
+  Mapping 'ALU_DW_square_2'
+  Mapping 'ALU_DW_square_3'
+  Mapping 'ALU_DW_square_4'
+  Mapping 'ALU_DW_square_5'
+  Mapping 'ALU_DW_square_6'
+  Mapping 'ALU_DW_square_7'
+  Mapping 'ALU_DW_square_8'
+  Mapping 'ALU_DW_square_9'
+  Mapping 'ALU_DW_square_10'
+  Mapping 'ALU_DW_square_11'
+  Mapping 'ALU_DW_square_12'
+  Mapping 'ALU_DW_square_13'
+  Processing 'ALU_DW_div_0'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_0'
+  Mapping 'ALU_DW01_add_1'
+  Mapping 'ALU_DW01_add_2'
+  Mapping 'ALU_DW01_add_3'
+  Mapping 'ALU_DW01_add_4'
+  Mapping 'ALU_DW01_add_5'
+  Mapping 'ALU_DW01_add_6'
+  Mapping 'ALU_DW01_add_7'
+  Mapping 'ALU_DW01_add_8'
+  Mapping 'ALU_DW01_add_9'
+  Mapping 'ALU_DW01_add_10'
+  Mapping 'ALU_DW01_add_11'
+  Mapping 'ALU_DW01_add_12'
+  Mapping 'ALU_DW01_add_13'
+  Mapping 'ALU_DW01_add_14'
+  Mapping 'ALU_DW01_add_15'
+  Mapping 'ALU_DW01_add_16'
+  Mapping 'ALU_DW01_add_17'
+  Mapping 'ALU_DW01_add_18'
+  Mapping 'ALU_DW01_add_19'
+  Mapping 'ALU_DW01_add_20'
+  Mapping 'ALU_DW01_add_21'
+  Mapping 'ALU_DW01_add_22'
+  Mapping 'ALU_DW01_add_23'
+  Mapping 'ALU_DW01_add_24'
+  Mapping 'ALU_DW01_add_25'
+  Mapping 'ALU_DW01_add_26'
+  Mapping 'ALU_DW01_add_27'
+  Mapping 'ALU_DW01_add_28'
+  Mapping 'ALU_DW01_add_29'
+  Mapping 'ALU_DW01_add_30'
+  Mapping 'ALU_DW01_add_31'
+  Mapping 'ALU_DW01_add_32'
+  Mapping 'ALU_DW01_add_33'
+  Mapping 'ALU_DW01_add_34'
+  Mapping 'ALU_DW01_add_35'
+  Mapping 'ALU_DW01_add_36'
+  Mapping 'ALU_DW01_add_37'
+  Mapping 'ALU_DW01_add_38'
+  Mapping 'ALU_DW01_add_39'
+  Mapping 'ALU_DW01_add_40'
+  Mapping 'ALU_DW01_add_41'
+  Mapping 'ALU_DW01_add_42'
+  Mapping 'ALU_DW01_add_43'
+  Mapping 'ALU_DW01_add_44'
+  Mapping 'ALU_DW01_add_45'
+  Mapping 'ALU_DW01_add_46'
+  Mapping 'ALU_DW01_add_47'
+  Mapping 'ALU_DW01_add_48'
+  Mapping 'ALU_DW01_add_49'
+  Mapping 'ALU_DW01_add_50'
+  Mapping 'ALU_DW01_add_51'
+  Mapping 'ALU_DW01_add_52'
+  Mapping 'ALU_DW01_add_53'
+  Mapping 'ALU_DW01_add_54'
+  Mapping 'ALU_DW01_add_55'
+  Mapping 'ALU_DW01_add_56'
+  Mapping 'ALU_DW01_add_57'
+  Mapping 'ALU_DW01_add_58'
+  Processing 'ALU_DW_div_1'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_59'
+  Mapping 'ALU_DW01_add_60'
+  Mapping 'ALU_DW01_add_61'
+  Mapping 'ALU_DW01_add_62'
+  Mapping 'ALU_DW01_add_63'
+  Mapping 'ALU_DW01_add_64'
+  Mapping 'ALU_DW01_add_65'
+  Mapping 'ALU_DW01_add_66'
+  Mapping 'ALU_DW01_add_67'
+  Mapping 'ALU_DW01_add_68'
+  Mapping 'ALU_DW01_add_69'
+  Mapping 'ALU_DW01_add_70'
+  Mapping 'ALU_DW01_add_71'
+  Mapping 'ALU_DW01_add_72'
+  Mapping 'ALU_DW01_add_73'
+  Mapping 'ALU_DW01_add_74'
+  Mapping 'ALU_DW01_add_75'
+  Mapping 'ALU_DW01_add_76'
+  Mapping 'ALU_DW01_add_77'
+  Mapping 'ALU_DW01_add_78'
+  Mapping 'ALU_DW01_add_79'
+  Mapping 'ALU_DW01_add_80'
+  Mapping 'ALU_DW01_add_81'
+  Mapping 'ALU_DW01_add_82'
+  Mapping 'ALU_DW01_add_83'
+  Mapping 'ALU_DW01_add_84'
+  Mapping 'ALU_DW01_add_85'
+  Processing 'ALU_DW_div_2'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_86'
+  Mapping 'ALU_DW01_add_87'
+  Mapping 'ALU_DW01_add_88'
+  Mapping 'ALU_DW01_add_89'
+  Mapping 'ALU_DW01_add_90'
+  Mapping 'ALU_DW01_add_91'
+  Mapping 'ALU_DW01_add_92'
+  Mapping 'ALU_DW01_add_93'
+  Mapping 'ALU_DW01_add_94'
+  Mapping 'ALU_DW01_add_95'
+  Mapping 'ALU_DW01_add_96'
+  Mapping 'ALU_DW01_add_97'
+  Mapping 'ALU_DW01_add_98'
+  Mapping 'ALU_DW01_add_99'
+  Mapping 'ALU_DW01_add_100'
+  Mapping 'ALU_DW01_add_101'
+  Mapping 'ALU_DW01_add_102'
+  Mapping 'ALU_DW01_add_103'
+  Mapping 'ALU_DW01_add_104'
+  Mapping 'ALU_DW01_add_105'
+  Mapping 'ALU_DW01_add_106'
+  Mapping 'ALU_DW01_add_107'
+  Mapping 'ALU_DW01_add_108'
+  Mapping 'ALU_DW01_add_109'
+  Mapping 'ALU_DW01_add_110'
+  Mapping 'ALU_DW01_add_111'
+  Mapping 'ALU_DW01_add_112'
+  Processing 'ALU_DW_div_3'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_113'
+  Mapping 'ALU_DW01_add_114'
+  Mapping 'ALU_DW01_add_115'
+  Mapping 'ALU_DW01_add_116'
+  Mapping 'ALU_DW01_add_117'
+  Mapping 'ALU_DW01_add_118'
+  Mapping 'ALU_DW01_add_119'
+  Mapping 'ALU_DW01_add_120'
+  Mapping 'ALU_DW01_add_121'
+  Mapping 'ALU_DW01_add_122'
+  Mapping 'ALU_DW01_add_123'
+  Processing 'ALU_DW_div_4'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_124'
+  Mapping 'ALU_DW01_add_125'
+  Mapping 'ALU_DW01_add_126'
+  Mapping 'ALU_DW01_add_127'
+  Mapping 'ALU_DW01_add_128'
+  Mapping 'ALU_DW01_add_129'
+  Mapping 'ALU_DW01_add_130'
+  Mapping 'ALU_DW01_add_131'
+  Mapping 'ALU_DW01_add_132'
+  Mapping 'ALU_DW01_add_133'
+  Mapping 'ALU_DW01_add_134'
+  Processing 'ALU_DW_div_5'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_135'
+  Mapping 'ALU_DW01_add_136'
+  Mapping 'ALU_DW01_add_137'
+  Mapping 'ALU_DW01_add_138'
+  Mapping 'ALU_DW01_add_139'
+  Mapping 'ALU_DW01_add_140'
+  Mapping 'ALU_DW01_add_141'
+  Mapping 'ALU_DW01_add_142'
+  Mapping 'ALU_DW01_add_143'
+  Mapping 'ALU_DW01_add_144'
+  Mapping 'ALU_DW01_add_145'
+  Processing 'ALU_DW_div_6'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_146'
+  Mapping 'ALU_DW01_add_147'
+  Mapping 'ALU_DW01_add_148'
+  Mapping 'ALU_DW01_add_149'
+  Mapping 'ALU_DW01_add_150'
+  Mapping 'ALU_DW01_add_151'
+  Mapping 'ALU_DW01_add_152'
+  Mapping 'ALU_DW01_add_153'
+  Mapping 'ALU_DW01_add_154'
+  Mapping 'ALU_DW01_add_155'
+  Mapping 'ALU_DW01_add_156'
+  Processing 'ALU_DW_div_7'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_157'
+  Mapping 'ALU_DW01_add_158'
+  Mapping 'ALU_DW01_add_159'
+  Processing 'ALU_DW_div_8'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_160'
+  Mapping 'ALU_DW01_add_161'
+  Mapping 'ALU_DW01_add_162'
+  Processing 'ALU_DW_div_9'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_163'
+  Mapping 'ALU_DW01_add_164'
+  Mapping 'ALU_DW01_add_165'
+  Processing 'ALU_DW_div_10'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_166'
+  Mapping 'ALU_DW01_add_167'
+  Mapping 'ALU_DW01_add_168'
+  Processing 'ALU_DW_div_11'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_169'
+  Mapping 'ALU_DW01_add_170'
+  Mapping 'ALU_DW01_add_171'
+  Processing 'ALU_DW_div_12'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_172'
+  Mapping 'ALU_DW01_add_173'
+  Mapping 'ALU_DW01_add_174'
+  Processing 'ALU_DW_div_13'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_175'
+  Mapping 'ALU_DW01_add_176'
+  Mapping 'ALU_DW01_add_177'
+  Processing 'ALU_DW_div_14'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ALU_DW01_add_178'
+  Mapping 'ALU_DW01_add_179'
+  Mapping 'ALU_DW01_add_180'
+  Mapping 'DW_rightsh'
+Information: Added key list 'DesignWare' to design 'ALU'. (DDB-72)
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Processing 'ALU_DW01_sub_0'
+  Processing 'ALU_DW01_sub_1'
+  Processing 'ALU_DW01_sub_2'
+  Processing 'ALU_DW01_sub_3'
+  Processing 'ALU_DW01_sub_4'
+  Processing 'ALU_DW01_sub_5'
+  Processing 'ALU_DW01_sub_6'
+  Processing 'ALU_DW01_sub_7'
+  Processing 'ALU_DW01_sub_8'
+  Processing 'ALU_DW01_sub_9'
+  Processing 'ALU_DW01_sub_10'
+  Processing 'ALU_DW01_sub_11'
+  Processing 'ALU_DW01_sub_12'
+  Processing 'ALU_DW01_sub_13'
+  Processing 'ALU_DW01_sub_14'
+  Processing 'ALU_DW01_add_181'
+  Processing 'ALU_DW01_add_182'
+  Processing 'ALU_DW01_add_183'
+  Processing 'ALU_DW01_add_184'
+  Processing 'ALU_DW01_add_185'
+  Processing 'ALU_DW01_add_186'
+  Processing 'ALU_DW01_add_187'
+  Processing 'ALU_DW01_add_188'
+  Processing 'ALU_DW01_add_189'
+  Processing 'ALU_DW01_add_190'
+  Processing 'ALU_DW01_add_191'
+  Processing 'ALU_DW01_add_192'
+  Processing 'ALU_DW01_add_193'
+  Processing 'ALU_DW01_add_194'
+  Processing 'ALU_DW01_add_195'
+  Mapping 'ALU_DW_mult_uns_0'
+  Mapping 'ALU_DW_mult_uns_1'
+  Mapping 'ALU_DW_mult_uns_2'
+  Mapping 'ALU_DW_mult_uns_3'
+  Mapping 'ALU_DW_mult_uns_4'
+  Mapping 'ALU_DW_mult_uns_5'
+  Mapping 'ALU_DW_mult_uns_6'
+  Mapping 'ALU_DW_mult_uns_7'
+  Mapping 'ALU_DW_mult_uns_8'
+  Mapping 'ALU_DW_mult_uns_9'
+  Mapping 'ALU_DW_mult_uns_10'
+  Mapping 'ALU_DW_mult_uns_11'
+  Mapping 'ALU_DW_mult_uns_12'
+  Mapping 'ALU_DW_mult_uns_13'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Allocating blocks in 'DW_sqrt_width64_tc_mode0'
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)

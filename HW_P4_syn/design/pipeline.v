@@ -1,3 +1,15 @@
+`include "./netlist/program_counter_syn.v"
+
+
+`include "./netlist/instruction_decoder_syn.v"
+`include "./netlist/register_file_syn.v"
+`include "./netlist/branch_syn.v"
+`include "./netlist/hdu_syn.v"
+`include "./netlist/mux_2_syn.v"
+
+`include "./netlist/ALU_syn.v"
+
+
 module pipeline #(
     parameter INSTRUCTION_WIDTH = 32,              
     parameter DATA_WIDTH = 64,
@@ -70,7 +82,7 @@ module pipeline #(
     reg [DATA_WIDTH-1:0] s3_reg_result;
     reg [2:0] s3_reg_ppp;
     //wire
-    wire [DATA_WIDTH-1:0] alu_result;
+    wire [DATA_WIDTH-1:0] ALU_result;
     wire [DATA_WIDTH-1:0] mux_result;
     wire [DATA_WIDTH-1:0] data_result;
     //END OF DEFINING IDENTIFIER
@@ -213,16 +225,16 @@ module pipeline #(
 
     /******************************stage 3: Execution or Memory Access******************************/
     //mux module & ALU module & SFU module
-    alu alu_module( //this alu may contains SFU
+    ALU ALU_module( //this ALU may contains SFU
         .opcode(s2_opcode),
         .data1(s2_reg_data1),
         .data2(s2_reg_data2),
 		.ww(s2_ww),   // fix
-        .result(alu_result)
+        .result(ALU_result)
     );
 
     mux_2 mux_ALU_input(
-        .in0(alu_result),
+        .in0(ALU_result),
         .in1(dmem_dataOut),
         .select(s2_reg_dmem_load_signal),
         .out(mux_result)

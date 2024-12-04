@@ -1,5 +1,8 @@
+`include "./include/sim_ver/DW_div.v"
+`include "./include/sim_ver/DW_sqrt.v"
+`include "./include/sim_ver/DW_square.v"
 
- module alu ( //this alu may contains SFU
+ module ALU ( //this alu may contains SFU
       input  [5:0]opcode,
       input [0:63]data1,
       input [0:63]data2,

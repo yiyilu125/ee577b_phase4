@@ -1,4 +1,4 @@
-module program_counter (
+module pc (
     input clk,                     // Clock signal
     input reset,                   // Synchronous reset signal
     input branch_en,               // Branch enable signal to trigger a jump to branch_target

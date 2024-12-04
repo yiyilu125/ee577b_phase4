@@ -43,7 +43,7 @@
 # top level module
 TOP = tb_cmp
 TOP_SYN = tb_cmp_syn
-DESIGN_NAME = output_ctrl
+DESIGN_NAME = pipeline
 
 # List of the design files
 DESIGN_FILES = ./design/*.v
