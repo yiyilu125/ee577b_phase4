@@ -1,0 +1,62 @@
+Submission files:
+	mesh4x4 rtl(finial version with all the submodules)
+	tb_mesh4x4.v rtl
+	mesh4x4_syn.v
+	mesh4x4.tcl (synthesis script)
+	area/timing/power report
+
+	post-syn:
+		? back annotated simulation
+		a screenshot of the  post syn simulation result
+	report: name: syn_summary.pdf
+		table contains: area-delay product(um^2*ns)
+						area
+						delay
+						power
+		critical path
+		histogram
+		design optimization
+		unfinished/difficulty 
+	
+	NO NEEDED {lec_report1.txt
+	lec_report2.txt
+	lec_report1_summary.txt : discribe whynon,mapping happened}
+
+	pnrReport.txt
+		preCTS timing summary files
+	pnrReport_summary.txt
+	mesh4x4.vo.v
+	tb_mesh4x4_pnr.v
+	mesh4x4_pnr.sdf
+	mesh4x4_pnr.tcl
+
+
+	pipeline rtl(finial version with all the submodules)
+	tb_pipeline.v rtl
+	pipeline_syn.v
+	pipeline.tcl (synthesis script)
+	area/timing/power report
+	post-syn:
+		? back annotated simulation
+		a screenshot of the  post syn simulation result
+	report: name: syn_summary.pdf
+		table contains: area-delay product(um^2*ns)
+						area
+						delay
+						power
+		critical path
+		histogram
+		design optimization
+		unfinished/difficulty 
+	
+	lec_report1.txt
+	lec_report2.txt
+	lec_report1_summary.txt : discribe whynon,mapping happened
+
+	pnrReport.txt
+		preCTS timing summary files
+	pnrReport_summary.txt
+	pipeline.vo.v
+	tb_pipeline_pnr.v
+	pipeline_pnr.sdf
+	pipeline_pnr.tcl
